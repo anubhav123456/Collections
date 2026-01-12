@@ -382,13 +382,3 @@ System.out.println(list); // [1, 2, 3, 4]
 
 ---
 
-## 13. Important Notes
-
-* JCF introduced consistency
-* Eliminated API confusion
-* Increased productivity
-* Iterable enables traversal
-* Streams (Java 1.8) will be covered separately
-
----
-
