@@ -394,31 +394,95 @@ queue.add();
 ## 11. Collections Utility Methods
 
 ```java
-List<Integer> list = new ArrayList<>();
-list.add(1);
-list.add(3);
-list.add(2);
-list.add(4);
-```
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
-### max()
+public class Main
+{
+    public static void main(String[] args)
+    {
 
-```java
-System.out.println(Collections.max(list)); // 4
-```
+        List<Integer> values = new ArrayList<>();
+        values.add(4);
+        values.add(1);
+        values.add(3);
+        values.add(2);
 
-### min()
+        // sort
+        Collections.sort(values);
+        System.out.println("Sorted: " + values); // Sorted: [1, 2, 3, 4]
 
-```java
-System.out.println(Collections.min(list)); // 1
-```
+        // binarySearch (list must be sorted)
+        int index = Collections.binarySearch(values, 3);
+        System.out.println("Index of 3: " + index); // Index of 3: 2
 
-### sort()
+        // get (List method, NOT Collections)
+        //Element at index 1: 2
+        System.out.println("Element at index 1: " + values.get(1));
 
-```java
-Collections.sort(list);
-System.out.println(list); // [1, 2, 3, 4]
+        // reverse
+        Collections.reverse(values);
+        //Reversed: [4, 3, 2, 1]
+        System.out.println("Reversed: " + values);
+
+        // shuffle
+        Collections.shuffle(values);
+        //Shuffled: [3, 4, 1, 2]
+        System.out.println("Shuffled: " + values);
+
+        // swap
+        Collections.swap(values, 0, 2);
+        //After swap(0,2): [1, 4, 3, 2]
+        System.out.println("After swap(0,2): " + values);
+
+        // copy
+        List<Integer> dest = new ArrayList<>();
+        dest.add(0);
+        dest.add(0);
+        dest.add(0);
+        dest.add(0);
+
+        Collections.copy(dest, values);
+        //Copied list: [1, 4, 3, 2]
+        System.out.println("Copied list: " + dest);
+
+        // min
+        //Min value: 1
+        System.out.println("Min value: " + Collections.min(values));
+
+        // max
+        // Max value: 4
+        System.out.println("Max value: " + Collections.max(values));
+
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(5);
+
+        // rotate -> rotation towards right
+        Collections.rotate(list, 2);
+        //After rotate by 2: [4, 5, 1, 2, 3]
+        System.out.println("After rotate by 2: " + list);
+
+        // rotate <- rotation towards left
+        Collections.rotate(list, -2);
+        //After rotate by -2: [1, 2, 3, 4, 5]
+        System.out.println("After rotate by -2: " + list);
+
+        // unmodifiableCollection
+        Collection<Integer> unmodifiable =
+                Collections.unmodifiableCollection(values);
+
+        // Unmodifiable collection: [3, 1, 4, 2]
+        System.out.println("Unmodifiable collection: " + unmodifiable);
+
+        // unmodifiable.add(10); ❌ throws UnsupportedOperationException
+    }
+}
 ```
 
 ---
-
