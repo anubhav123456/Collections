@@ -267,95 +267,99 @@ public class Main
 ## 8. Collection Methods – Code Example
 
 ```java
-List<Integer> values = new ArrayList<>();
-values.add(2);
-values.add(3);
-values.add(4);
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        List<Integer> values = new ArrayList<>();
+        values.add(1);
+        values.add(2);
+        values.add(3);
+        values.add(4);
+
+        System.out.println(values.size()); // 4
+        System.out.println(values.isEmpty()); // false
+        System.out.println(values.contains(100)); // false
+
+        Integer[] arr1 = values.toArray(new Integer[0]);
+        int[] arr2 = values.stream().mapToInt(Integer::intValue).toArray();
+        for(int i : arr1)
+        {
+            System.out.print(i + " "); // 1 2 3 4
+        }
+
+        System.out.println();
+
+        for(int i : arr2)
+        {
+            System.out.print(i + " "); // 1 2 3 4
+        }
+
+        System.out.println();
+
+        values.add(100);
+        System.out.println(values); // [1, 2, 3, 4, 100]
+
+        //remove from ith index
+        values.remove(4);
+        System.out.println(values); //[1, 2, 3, 4]
+
+        values.add(100);
+        //remove value from list
+        values.remove(Integer.valueOf(100));
+        System.out.println(values); //[1, 2, 3, 4]
+
+        List<Integer> list = new ArrayList<>();
+        list.add(10);
+        list.add(20);
+        list.add(30);
+        list.add(40);
+
+        values.addAll(list);
+        System.out.println(values); //[1, 2, 3, 4, 10, 20, 30, 40]
+
+        values.removeAll(list);
+        System.out.println(values); // [1, 2, 3, 4]
+
+        values.add(20);
+        values.add(10);
+        values.add(40);
+        values.add(30);
+
+        System.out.println(values.containsAll(list)); // true
+
+        values.removeAll(list);
+        list.clear();
+        System.out.println(values); // [1, 2, 3, 4]
+        System.out.println(list); // []
+
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+
+        System.out.println(values.equals(list)); // true
+
+        list.clear();
+
+        list.add(2);
+        list.add(4);
+        list.add(1);
+        list.add(3);
+
+        System.out.println(values.equals(list)); // false
+
+    }
+}
 ```
 
-### size()
-
-```java
-System.out.println(values.size()); // 3
-```
-
-### isEmpty()
-
-```java
-System.out.println(values.isEmpty()); // false
-```
-
-### contains()
-
-```java
-System.out.println(values.contains(5)); // false
-```
-
-### add()
-
-```java
-values.add(5);
-System.out.println(values.contains(5)); // true
-```
-
-### remove by index
-
-```java
-values.remove(3); // removes element at index 3 (value 5)
-```
-
-### remove by object
-
-```java
-values.remove(Integer.valueOf(3)); // removes value 3
-```
 
 ---
 
-## 9. addAll(), containsAll(), removeAll()
-
-```java
-Stack<Integer> stackValues = new Stack<>();
-stackValues.add(6);
-stackValues.add(7);
-stackValues.add(8);
-```
-
-### addAll()
-
-```java
-values.addAll(stackValues);
-```
-
-### containsAll()
-
-```java
-System.out.println(values.containsAll(stackValues)); // true
-```
-
-### remove()
-
-```java
-values.remove(Integer.valueOf(7));
-System.out.println(values.containsAll(stackValues)); // false
-```
-
-### removeAll()
-
-```java
-values.removeAll(stackValues);
-```
-
-### clear()
-
-```java
-values.clear();
-System.out.println(values.isEmpty()); // true
-```
-
----
-
-## 10. Power of Collection Framework
+## 9. Power of Collection Framework
 
 * Same method names across all collections
 * Easy to remember
@@ -371,7 +375,7 @@ queue.add();
 
 ---
 
-## 11. Collection vs Collections
+## 10. Collection vs Collections
 
 ### Collection (No 's')
 
@@ -387,7 +391,7 @@ queue.add();
 
 ---
 
-## 12. Collections Utility Methods
+## 11. Collections Utility Methods
 
 ```java
 List<Integer> list = new ArrayList<>();
