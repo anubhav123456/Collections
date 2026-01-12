@@ -15,15 +15,6 @@
   * **Removed from the front (head)**
 * Real-life analogy: Movie ticket queue.
 
-### Queue Hierarchy
-
-```
-Iterable
-  └── Collection
-        └── Queue
-              └── PriorityQueue (implementation)
-```
-
 ### Queue Characteristics
 
 * Queue is an **interface**
