@@ -242,21 +242,23 @@ public class Main
 
 ### Method Summary
 
-| Method        | Description                    | Java Version Introduced         |
-| ------------- | ------------------------------ | ------------------------------- |
-| size()        | Number of elements             | Java 1.2                        |
-| isEmpty()     | Checks if empty                | Java 1.2                        |
-| contains()    | Search element                 | Java 1.2                        |
-| add()         | Insert element                 | Java 1.2                        |
-| remove()      | Remove element                 | Java 1.2                        |
-| addAll()      | Add another collection         | Java 1.2                        |
-| removeAll()   | Remove common elements         | Java 1.2                        |
-| containsAll() | Check full collection presence | Java 1.2                        |
-| clear()       | Remove all elements            | Java 1.2                        |
-| iterator()    | Iterate elements               | Java 1.2                        |
-| equals()              | Compare collections *(Object override)*                                                           | Java 1.2 |
-| stream()              | Creates a sequential stream to process collection elements one by one using functional operations.| Java 1.8 |
-| parallelStream()      | Creates a parallel stream to process collection elements concurrently using multiple threads.     | Java 1.8 |
+| Method           | Description                                                                                       | Java Version Introduced |
+| ---------------- | ------------------------------------------------------------------------------------------------- | ----------------------- |
+| size()           | Number of elements                                                                                | Java 1.2                |
+| isEmpty()        | Checks if empty                                                                                   | Java 1.2                |
+| contains()       | Search element                                                                                    | Java 1.2                |
+| add()            | Insert element                                                                                    | Java 1.2                |
+| remove()         | Remove element                                                                                    | Java 1.2                |
+| addAll()         | Add another collection                                                                            | Java 1.2                |
+| removeAll()      | Remove common elements                                                                            | Java 1.2                |
+| containsAll()    | Check full collection presence                                                                    | Java 1.2                |
+| clear()          | Remove all elements                                                                               | Java 1.2                |
+| iterator()       | Iterate elements                                                                                  | Java 1.2                |
+| equals()         | Compare collections *(Object override)*                                                           | Java 1.2                |
+| toArray()        | Converts collection into an array (`Object[]` or typed array)                                     | Java 1.2                |
+| stream()         | Creates a sequential stream to process collection elements one by one using functional operations | Java 1.8                |
+| parallelStream() | Creates a parallel stream to process collection elements concurrently using multiple threads      | Java 1.8                |
+
 
 ---
 
