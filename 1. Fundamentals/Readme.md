@@ -253,8 +253,8 @@ public class Main
 | removeAll()   | Remove common elements         | Java 1.2                        |
 | containsAll() | Check full collection presence | Java 1.2                        |
 | clear()       | Remove all elements            | Java 1.2                        |
-| equals()      | Compare collections            | Java 1.2 *(Object override)*    |
 | iterator()    | Iterate elements               | Java 1.2                        |
+| equals()              | Compare collections *(Object override)*                                                           | Java 1.2 |
 | stream()              | Creates a sequential stream to process collection elements one by one using functional operations.| Java 1.8 |
 | parallelStream()      | Creates a parallel stream to process collection elements concurrently using multiple threads.     | Java 1.8 |
 
