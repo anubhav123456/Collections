@@ -120,29 +120,42 @@ System.out.println(vector.get(0));
 
 ## 5. Iteration Techniques
 
-### Sample Collection
 
-```java
-List<Integer> values = new ArrayList<>();
-values.add(1);
-values.add(2);
-values.add(3);
-values.add(4);
-```
 
 ---
 
 ### 1️⃣ Using Iterator
 
 ```java
-Iterator<Integer> iterator = values.iterator();
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
-while (iterator.hasNext()) {
-    Integer value = iterator.next();
-    System.out.println(value);
+public class Main
+{
+    public static void main(String[] args)
+    {
+        List<Integer> values = new ArrayList<>();
+        values.add(1);
+        values.add(2);
+        values.add(3);
+        values.add(4);
 
-    if (value == 3) {
-        iterator.remove();
+        Iterator<Integer> iterator = values.iterator();
+
+        while (iterator.hasNext())
+        {
+            int value = iterator.next();
+            System.out.println(value);
+
+            if(value == 3)
+            {
+                iterator.remove();
+            }
+        }
+
+        System.out.println(values); // [1, 2, 4]
+
     }
 }
 ```
