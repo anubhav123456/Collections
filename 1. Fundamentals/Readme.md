@@ -92,7 +92,8 @@ System.out.println(vector.get(0));
 1. **Iterable → Collection** hierarchy
 2. **Map** (separate hierarchy)
 
-![JCF](pics/JCF.jpg)
+![JCF](pics/JCF1.jpg)
+![JCF](pics/JCF2.jpg)
 
 ### Important Points
 
