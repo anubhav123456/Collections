@@ -179,8 +179,25 @@ Result after iteration:
 ### 2️⃣ Enhanced For Loop
 
 ```java
-for (Integer value : values) {
-    System.out.println(value);
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        List<Integer> values = new ArrayList<>();
+        values.add(1);
+        values.add(2);
+        values.add(3);
+        values.add(4);
+
+        for(Integer value : values)
+        {
+            System.out.println(value);
+        }
+
+    }
 }
 ```
 
@@ -191,7 +208,24 @@ for (Integer value : values) {
 ### 3️⃣ forEach() Method (Java 1.8)
 
 ```java
-values.forEach(value -> System.out.println(value));
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        List<Integer> values = new ArrayList<>();
+        values.add(1);
+        values.add(2);
+        values.add(3);
+        values.add(4);
+
+       //values.forEach(System.out::println); or
+       values.forEach(val -> System.out.println(val));
+
+    }
+}
 ```
 
 * Uses **lambda expression**
