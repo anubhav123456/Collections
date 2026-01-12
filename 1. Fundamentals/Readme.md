@@ -92,15 +92,7 @@ System.out.println(vector.get(0));
 1. **Iterable → Collection** hierarchy
 2. **Map** (separate hierarchy)
 
-```
-Iterable
-   |
-Collection
-   |
----------------------------------
-|        |           |
-List     Set         Queue
-```
+![JCF](pics/JCF.jpg)
 
 ### Important Points
 
