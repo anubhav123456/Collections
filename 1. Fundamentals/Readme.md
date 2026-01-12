@@ -242,20 +242,21 @@ public class Main
 
 ### Method Summary
 
-| Method        | Description                    |
-| ------------- | ------------------------------ |
-| size()        | Number of elements             |
-| isEmpty()     | Checks if empty                |
-| contains()    | Search element                 |
-| add()         | Insert element                 |
-| remove()      | Remove element                 |
-| addAll()      | Add another collection         |
-| removeAll()   | Remove common elements         |
-| containsAll() | Check full collection presence |
-| clear()       | Remove all elements            |
-| equals()      | Compare collections            |
-| iterator()    | Iterate elements               |
-| stream()      | Java 1.8 stream                |
+| Method        | Description                    | Java Version Introduced         |
+| ------------- | ------------------------------ | ------------------------------- |
+| size()        | Number of elements             | Java 1.2                        |
+| isEmpty()     | Checks if empty                | Java 1.2                        |
+| contains()    | Search element                 | Java 1.2                        |
+| add()         | Insert element                 | Java 1.2                        |
+| remove()      | Remove element                 | Java 1.2                        |
+| addAll()      | Add another collection         | Java 1.2                        |
+| removeAll()   | Remove common elements         | Java 1.2                        |
+| containsAll() | Check full collection presence | Java 1.2                        |
+| clear()       | Remove all elements            | Java 1.2                        |
+| equals()      | Compare collections            | Java 1.2 *(Object override)*    |
+| iterator()    | Iterate elements               | Java 1.2                        |
+| stream()              | Creates a sequential stream to process collection elements one by one using functional operations.| Java 1.8 |
+| parallelStream()      | Creates a parallel stream to process collection elements concurrently using multiple threads.     | Java 1.8 |
 
 ---
 
