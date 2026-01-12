@@ -42,6 +42,35 @@ Queue provides **6 additional methods**:
 * **poll vs remove** → null vs exception
 * **peek vs element** → null vs exception
 
+```java
+import java.util.*;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Queue<Integer> que = new LinkedList<>();
+        que.offer(10);
+        que.offer(20);
+        que.offer(30);
+        que.offer(40);
+
+        //size : 4
+        System.out.println("size : " + que.size()); // 4
+        
+        //Front : 10
+        System.out.println("Front : " + que.peek());
+
+        while (!que.isEmpty())
+        {
+            System.out.print(que.poll() + " "); // 10 20 30 40 
+        }
+
+
+    }
+}
+```
+
 ---
 
 ## 3. PriorityQueue
