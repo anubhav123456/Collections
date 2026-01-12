@@ -254,10 +254,12 @@ public class Main
 | containsAll()    | Check full collection presence                                                                    | Java 1.2                |
 | clear()          | Remove all elements                                                                               | Java 1.2                |
 | iterator()       | Iterate elements                                                                                  | Java 1.2                |
+| forEach()        | Performs the given action for each element of the collection using a lambda expression            | Java 1.8                |
 | equals()         | Compare collections *(Object override)*                                                           | Java 1.2                |
 | toArray()        | Converts collection into an array (`Object[]` or typed array)                                     | Java 1.2                |
 | stream()         | Creates a sequential stream to process collection elements one by one using functional operations | Java 1.8                |
 | parallelStream() | Creates a parallel stream to process collection elements concurrently using multiple threads      | Java 1.8                |
+
 
 
 ---
