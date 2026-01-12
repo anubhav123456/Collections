@@ -165,15 +165,6 @@ public class Main
 * `hasNext()` → checks if elements remain
 * `next()` → returns next element
 * `remove()` → removes last returned element
-
-Result after iteration:
-
-```
-1
-2
-4
-```
-
 ---
 
 ### 2️⃣ Enhanced For Loop
