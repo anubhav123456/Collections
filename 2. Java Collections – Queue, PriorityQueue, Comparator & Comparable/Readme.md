@@ -103,23 +103,34 @@ public class Main
 ### Code Example
 
 ```java
-PriorityQueue<Integer> pq = new PriorityQueue<>();
+import java.util.*;
 
-pq.add(5);
-pq.add(2);
-pq.add(8);
-pq.add(1);
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Queue<Integer> que = new PriorityQueue<>();
+        que.offer(40);
+        que.offer(10);
+        que.offer(20);
+        que.offer(30);
 
-while (!pq.isEmpty()) {
-    System.out.print(pq.poll() + " ");
+        //size : 4
+        System.out.println("size : " + que.size()); // 4
+
+        //Front : 10
+        System.out.println("Front : " + que.peek());
+
+        while (!que.isEmpty())
+        {
+            System.out.print(que.poll() + " "); // 10 20 30 40
+        }
+
+
+    }
 }
 ```
 
-### Output
-
-```
-1 2 5 8
-```
 
 ### Explanation
 
@@ -134,22 +145,32 @@ while (!pq.isEmpty()) {
 ### Code Example
 
 ```java
-PriorityQueue<Integer> maxPQ = new PriorityQueue<>((a, b) -> b - a);
+import java.util.*;
 
-maxPQ.add(5);
-maxPQ.add(2);
-maxPQ.add(8);
-maxPQ.add(1);
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Queue<Integer> que = new PriorityQueue<>((a, b)-> b  - a);
+        que.offer(30);
+        que.offer(20);
+        que.offer(10);
+        que.offer(40);
 
-while (!maxPQ.isEmpty()) {
-    System.out.print(maxPQ.poll() + " ");
+        //size : 4
+        System.out.println("size : " + que.size()); // 4
+
+        //Front : 40
+        System.out.println("Front : " + que.peek());
+
+        while (!que.isEmpty())
+        {
+            System.out.print(que.poll() + " "); // 40 30 20 10
+        }
+
+
+    }
 }
-```
-
-### Output
-
-```
-8 5 2 1
 ```
 
 ### Explanation
@@ -177,16 +198,8 @@ while (!maxPQ.isEmpty()) {
 1. Sorting in **descending order**
 2. Sorting **custom objects**
 
-Example issue:
-
-```java
-Arrays.sort(carArray); // Throws ClassCastException
-```
-
 Reason:
-
 * JVM doesn’t know **how to compare objects**
-
 ---
 
 ## 8. Comparator
