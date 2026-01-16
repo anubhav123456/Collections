@@ -83,7 +83,7 @@ Where `Type` can be `Integer`, `String`, custom objects, etc.
 
 ### ➕ Add Methods
 
-| Method                              |  Explanation                                                                    |
+| Method                              |  Explanation                                                                            |
 | ----------------------------------- | --------------------------------------------------------------------------------------- |
 | `add(E e)`                          | Inserts the element at the **tail** of the deque; throws exception if it fails          |
 | `addAll(Collection<? extends E> c)` | Adds **all elements of the given collection** to the tail of the deque                  |
@@ -97,7 +97,7 @@ Where `Type` can be `Integer`, `String`, custom objects, etc.
 
 ### ➖ Remove Methods
 
-| Method             | One-Line Explanation                                                          |
+| Method             |          Explanation                                                          |
 | ------------------ | ----------------------------------------------------------------------------- |
 | `remove()`         | Removes and returns the **first element**; throws exception if deque is empty |
 | `remove(Object o)` | Removes the **first occurrence** of the specified element                     |
@@ -111,7 +111,7 @@ Where `Type` can be `Integer`, `String`, custom objects, etc.
 
 ### 📥 Access Methods (Exception-Throwing)
 
-| Method       | One-Line Explanation                                                          |
+| Method       |          Explanation                                                          |
 | ------------ | ----------------------------------------------------------------------------- |
 | `element()`  | Retrieves (without removing) the **head element**; throws exception if empty  |
 | `getFirst()` | Retrieves (without removing) the **first element**; throws exception if empty |
@@ -121,7 +121,7 @@ Where `Type` can be `Integer`, `String`, custom objects, etc.
 
 ### 👀 Peek Methods (Safe / Null-Returning)
 
-| Method        | One-Line Explanation                                                        |
+| Method        |          Explanation                                                        |
 | ------------- | --------------------------------------------------------------------------- |
 | `peek()`      | Retrieves (without removing) the **head element**; returns `null` if empty  |
 | `peekFirst()` | Retrieves (without removing) the **first element**; returns `null` if empty |
@@ -131,7 +131,7 @@ Where `Type` can be `Integer`, `String`, custom objects, etc.
 
 ### 🔁 Iterator Methods
 
-| Method                 | One-Line Explanation                                           |
+| Method                 |          Explanation                                           |
 | ---------------------- | -------------------------------------------------------------- |
 | `iterator()`           | Returns a **weakly consistent iterator** from **head to tail** |
 | `descendingIterator()` | Returns a **weakly consistent iterator** from **tail to head** |
@@ -140,7 +140,7 @@ Where `Type` can be `Integer`, `String`, custom objects, etc.
 
 ### ✅ Boolean Method
 
-| Method               | One-Line Explanation                                        |
+| Method               |          Explanation                                        |
 | -------------------- | ----------------------------------------------------------- |
 | `contains(Object o)` | Checks whether the deque **contains the specified element** |
 
