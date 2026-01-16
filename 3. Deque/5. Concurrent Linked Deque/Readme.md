@@ -79,14 +79,85 @@ Where `Type` can be `Integer`, `String`, custom objects, etc.
 
 ---
 
+## ConcurrentLinkedDeque Methods
+
+### ➕ Add Methods
+
+| Method                              |  Explanation                                                                    |
+| ----------------------------------- | --------------------------------------------------------------------------------------- |
+| `add(E e)`                          | Inserts the element at the **tail** of the deque; throws exception if it fails          |
+| `addAll(Collection<? extends E> c)` | Adds **all elements of the given collection** to the tail of the deque                  |
+| `addFirst(E e)`                     | Inserts the element at the **front (head)** of the deque                                |
+| `addLast(E e)`                      | Inserts the element at the **end (tail)** of the deque                                  |
+| `offer(E e)`                        | Inserts the element at the **tail**, returns `true/false` instead of throwing exception |
+| `offerFirst(E e)`                   | Inserts the element at the **front**, returns status instead of exception               |
+| `offerLast(E e)`                    | Inserts the element at the **end**, returns status instead of exception                 |
+
+---
+
+### ➖ Remove Methods
+
+| Method             | One-Line Explanation                                                          |
+| ------------------ | ----------------------------------------------------------------------------- |
+| `remove()`         | Removes and returns the **first element**; throws exception if deque is empty |
+| `remove(Object o)` | Removes the **first occurrence** of the specified element                     |
+| `removeFirst()`    | Removes and returns the **head element**; throws exception if empty           |
+| `removeLast()`     | Removes and returns the **tail element**; throws exception if empty           |
+| `poll()`           | Removes and returns the **first element**; returns `null` if empty            |
+| `pollFirst()`      | Removes and returns the **head element**; returns `null` if empty             |
+| `pollLast()`       | Removes and returns the **tail element**; returns `null` if empty             |
+
+---
+
+### 📥 Access Methods (Exception-Throwing)
+
+| Method       | One-Line Explanation                                                          |
+| ------------ | ----------------------------------------------------------------------------- |
+| `element()`  | Retrieves (without removing) the **head element**; throws exception if empty  |
+| `getFirst()` | Retrieves (without removing) the **first element**; throws exception if empty |
+| `getLast()`  | Retrieves (without removing) the **last element**; throws exception if empty  |
+
+---
+
+### 👀 Peek Methods (Safe / Null-Returning)
+
+| Method        | One-Line Explanation                                                        |
+| ------------- | --------------------------------------------------------------------------- |
+| `peek()`      | Retrieves (without removing) the **head element**; returns `null` if empty  |
+| `peekFirst()` | Retrieves (without removing) the **first element**; returns `null` if empty |
+| `peekLast()`  | Retrieves (without removing) the **last element**; returns `null` if empty  |
+
+---
+
+### 🔁 Iterator Methods
+
+| Method                 | One-Line Explanation                                           |
+| ---------------------- | -------------------------------------------------------------- |
+| `iterator()`           | Returns a **weakly consistent iterator** from **head to tail** |
+| `descendingIterator()` | Returns a **weakly consistent iterator** from **tail to head** |
+
+---
+
+### ✅ Boolean Method
+
+| Method               | One-Line Explanation                                        |
+| -------------------- | ----------------------------------------------------------- |
+| `contains(Object o)` | Checks whether the deque **contains the specified element** |
+
+---
+
+
+
+
 ## Basic Working Example
 
 ```java
 // Java Program to demonstrate the working of ConcurrentLinkedDeque
-import java.util.Deque;
+import java.util.*;
 import java.util.concurrent.ConcurrentLinkedDeque;
 
-public class Main {
+public class Main
+{
     public static void main(String[] args)
     {
         Deque<Integer> d = new ConcurrentLinkedDeque<>();
@@ -94,6 +165,8 @@ public class Main {
         d.addLast(2);
         int f = d.pollFirst();
         int l = d.pollLast();
+        
+        //First: 1, Last: 2
         System.out.println("First: " + f + ", Last: " + l);
     }
 }
@@ -107,8 +180,10 @@ public class Main {
 // Java Program to demonstrates the working of addFirst()
 import java.util.concurrent.*;
 
-class Main {
-    public static void main(String[] args) {
+class Main 
+{
+    public static void main(String[] args) 
+    {
         
         // Create a ConcurrentLinkedDeque
         ConcurrentLinkedDeque<Integer> d
@@ -140,7 +215,8 @@ class Main {
 // Java Program to demonstrates addFirst(), peekLast(), peekFirst(),
 // removeLast(), removeFirst()
 import java.util.concurrent.*;
-class Main {
+class Main 
+{
     
     public static void main(String[] args)
     {
@@ -182,9 +258,11 @@ Methods used:
 ```java
 // Add Elements in ConcurrentLinkedDeque
 import java.util.concurrent.*;
-class Main {
+class Main 
+{
 
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
         
         ConcurrentLinkedDeque<Integer> d
         = new ConcurrentLinkedDeque<>();
@@ -218,9 +296,11 @@ Methods used:
 ```java
 // Java Program to demonstrates removal operations
 import java.util.concurrent.*;
-class Main {
+class Main 
+{
     
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
 
         ConcurrentLinkedDeque<Integer> d
         = new ConcurrentLinkedDeque<>();
@@ -258,9 +338,11 @@ class Main {
 import java.util.concurrent.*;
 import java.util.*;
 
-public class Main {
+public class Main 
+{
 
-    public static void main(String args[]) {
+    public static void main(String args[]) 
+    {
 
         ConcurrentLinkedDeque<String> d
         = new ConcurrentLinkedDeque<>();
@@ -273,6 +355,38 @@ public class Main {
         System.out.println("Deque: " + d);
 
         Iterator<String> i = d.iterator();
+
+        System.out.println("Iterating over elements:");
+        while (i.hasNext()) {
+            System.out.println(i.next());
+        }
+    }
+}
+```
+
+
+```java
+// Java Program to demonstrates descendingIterator()
+import java.util.concurrent.*;
+import java.util.*;
+
+public class Main 
+{
+
+    public static void main(String args[]) 
+    {
+
+        ConcurrentLinkedDeque<String> d
+        = new ConcurrentLinkedDeque<>();
+
+        d.add("Java");
+        d.add("C++");
+        d.add("Python");
+        d.add("Js");
+
+        System.out.println("Deque: " + d);
+
+        Iterator<String> i = d.descendingIterator();
 
         System.out.println("Iterating over elements:");
         while (i.hasNext()) {
@@ -296,7 +410,8 @@ Methods used:
 // Java Program to demonstrates getFirst(), getLast() and element()
 import java.util.*;
 import java.util.concurrent.*;
-class Main {
+class Main 
+{
     public static void main(String[] args)
     {
         ConcurrentLinkedDeque<String> d
