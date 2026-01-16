@@ -45,6 +45,9 @@ It is suitable when multiple threads need to **insert, remove, or access element
 
 ## Class Hierarchy
 
+
+![ConcurrentLinkedDequeinJava](pics/ConcurrentLinkedDequeinJava.png)
+
 ```
 AbstractCollection
         ↑
