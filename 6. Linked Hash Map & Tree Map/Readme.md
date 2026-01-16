@@ -1,6 +1,7 @@
 # Java Collections Framework – LinkedHashMap & TreeMap
 
 ![JCF2](pics/JCF2.jpg)
+![JCF2](pics/NavigableMap.png)
 
 ---
 
