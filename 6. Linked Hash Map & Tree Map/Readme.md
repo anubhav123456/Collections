@@ -80,15 +80,24 @@ for (Entry<K,V> e = head; e != null; e = e.after) {
 ### 1.5 Example – Insertion Order
 
 ```java
-Map<Integer, String> map = new LinkedHashMap<>();
-map.put(1, "A");
-map.put(21, "B");
-map.put(23, "C");
-map.put(141, "D");
-map.put(25, "E");
+import java.util.*;
 
-for (Map.Entry<Integer, String> entry : map.entrySet()) {
-    System.out.println(entry.getKey() + " -> " + entry.getValue());
+public class Main
+{
+    public static void main(String[] args) throws InterruptedException
+    {
+        Map<Integer, String> map = new LinkedHashMap<>();
+        map.put(1, "A");
+        map.put(21, "B");
+        map.put(23, "C");
+        map.put(141, "D");
+        map.put(25, "E");
+
+        for (Map.Entry<Integer, String> entry : map.entrySet())
+        {
+            System.out.println(entry.getKey() + " -> " + entry.getValue());
+        }
+    }
 }
 ```
 
