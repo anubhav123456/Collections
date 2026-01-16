@@ -270,20 +270,22 @@ class Main
 
     public static void main(String[] args) 
     {
-        
         ConcurrentLinkedDeque<Integer> d
-        = new ConcurrentLinkedDeque<>();
+                = new ConcurrentLinkedDeque<>();
 
         d.add(10);
         d.add(20);
         d.addFirst(30);
-
+        
+        // Elements in d: [30, 10, 20]
         System.out.println("Elements in d: " + d);
 
         ConcurrentLinkedDeque<Integer> d1
-        = new ConcurrentLinkedDeque<>();
+                = new ConcurrentLinkedDeque<>();
 
         d1.addAll(d);
+        
+        //Elements in d1: [30, 10, 20]
         System.out.println("Elements in d1: " + d1);
     }
 }
