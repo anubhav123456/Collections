@@ -116,18 +116,27 @@ public class Main
 ### 1.6 Access Order Example (LRU Behavior)
 
 ```java
-Map<Integer, String> map = new LinkedHashMap<>(16, 0.75f, true);
+import java.util.*;
 
-map.put(1, "A");
-map.put(21, "B");
-map.put(23, "C");
-map.put(141, "D");
-map.put(25, "E");
+public class Main
+{
+    public static void main(String[] args) throws InterruptedException
+    {
+        Map<Integer, String> map = new LinkedHashMap<>(16, 0.75f, true);
 
-map.get(23); // accessed
+        map.put(1, "A");
+        map.put(21, "B");
+        map.put(23, "C");
+        map.put(141, "D");
+        map.put(25, "E");
 
-for (Map.Entry<Integer, String> entry : map.entrySet()) {
-    System.out.println(entry.getKey());
+        map.get(23); // accessed
+
+        for (Map.Entry<Integer, String> entry : map.entrySet())
+        {
+            System.out.println(entry.getKey());
+        }
+    }
 }
 ```
 
