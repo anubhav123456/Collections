@@ -235,13 +235,21 @@ static final class Entry<K,V> {
 ### 2.4 TreeMap – Natural Sorting Example
 
 ```java
-Map<Integer, String> map = new TreeMap<>();
-map.put(21, "B");
-map.put(13, "C");
-map.put(11, "D");
-map.put(5, "A");
+import java.util.*;
 
-System.out.println(map);
+public class Main
+{
+    public static void main(String[] args) throws InterruptedException
+    {
+        Map<Integer, String> map = new TreeMap<>();
+        map.put(21, "B");
+        map.put(13, "C");
+        map.put(11, "D");
+        map.put(5, "A");
+
+        System.out.println(map);
+    }
+}
 ```
 
 **Output:**
@@ -255,14 +263,21 @@ System.out.println(map);
 ### 2.5 TreeMap with Custom Comparator (Descending Order)
 
 ```java
-Map<Integer, String> map = new TreeMap<>((a, b) -> b - a);
+import java.util.*;
 
-map.put(21, "B");
-map.put(13, "C");
-map.put(11, "D");
-map.put(5, "A");
+public class Main
+{
+    public static void main(String[] args) throws InterruptedException
+    {
+        Map<Integer, String> map = new TreeMap<>((a, b)-> b-a);
+        map.put(21, "B");
+        map.put(13, "C");
+        map.put(11, "D");
+        map.put(5, "A");
 
-System.out.println(map);
+        System.out.println(map);
+    }
+}
 ```
 
 **Output:**
@@ -276,7 +291,31 @@ System.out.println(map);
 ## 3. SortedMap Methods
 
 ```java
-SortedMap<Integer, String> map = new TreeMap<>();
+import java.util.*;
+
+public class Main
+{
+    public static void main(String[] args) throws InterruptedException
+    {
+        SortedMap<Integer, String> map = new TreeMap<>();
+        map.put(21, "B");
+        map.put(13, "C");
+        map.put(11, "D");
+        map.put(5, "A");
+
+        // {5=A, 11=D, 13=C, 21=B}
+        System.out.println(map);
+
+        //{5=A}
+        System.out.println(map.headMap(11));
+
+        //{11=D, 13=C, 21=B}
+        System.out.println(map.tailMap(11));
+
+        System.out.println(map.firstKey()); // 5
+        System.out.println(map.lastKey()); // 21
+    }
+}
 ```
 
 | Method     | Description          |
@@ -290,54 +329,100 @@ SortedMap<Integer, String> map = new TreeMap<>();
 
 ## 4. NavigableMap Methods (Very Important)
 
-### 4.1 Lower / Floor
-
 ```java
-map.lowerKey(23);      // strictly less
-map.floorKey(23);      // less or equal
+import java.util.*;
+
+public class Main
+{
+    public static void main(String[] args) throws InterruptedException
+    {
+        NavigableMap<Integer, String> map = new TreeMap<>();
+        map.put(1, "A");
+        map.put(21, "B");
+        map.put(23, "C");
+        map.put(25, "D");
+        map.put(141, "E");
+
+        // {1=A, 21=B, 23=C, 25=D, 141=E}
+        System.out.println(map);
+    }
+}
 ```
+
+Current order (ascending):
+`{1=A, 21=B, 23=C, 25=D, 141=E}`
 
 ---
 
-### 4.2 Higher / Ceiling
+## 1️⃣ Lower / Floor Methods
 
-```java
-map.higherKey(23);     // strictly greater
-map.ceilingKey(23);   // greater or equal
-```
+| Method        | Meaning                                    | Condition | Example Call       | Output |
+| ------------- | ------------------------------------------ | --------- | ------------------ | ------ |
+| `lowerKey(k)` | Greatest key **strictly less than** `k`    | `< k`     | `map.lowerKey(23)` | `21`   |
+| `floorKey(k)` | Greatest key **less than or equal to** `k` | `≤ k`     | `map.floorKey(23)` | `23`   |
+|               |                                            |           | `map.floorKey(24)` | `23`   |
 
----
+📌 **Interview Tip**
 
-### 4.3 Entry Variants
-
-```java
-map.lowerEntry(23);
-map.floorEntry(24);
-map.ceilingEntry(23);
-map.higherEntry(23);
-```
-
-➡️ Entry returns **key + value**
+* **Lower → Strictly less**
+* **Floor → Equal allowed**
 
 ---
 
-### 4.4 Polling Entries
+## 2️⃣ Higher / Ceiling Methods
 
-```java
-map.pollFirstEntry(); // removes smallest
-map.pollLastEntry();  // removes largest
-```
+| Method          | Meaning                                       | Condition | Example Call         | Output |
+| --------------- | --------------------------------------------- | --------- | -------------------- | ------ |
+| `higherKey(k)`  | Smallest key **strictly greater than** `k`    | `> k`     | `map.higherKey(23)`  | `25`   |
+| `ceilingKey(k)` | Smallest key **greater than or equal to** `k` | `≥ k`     | `map.ceilingKey(23)` | `23`   |
+|                 |                                               |           | `map.ceilingKey(24)` | `25`   |
+
+📌 **Interview Tip**
+
+* **Higher → Strictly greater**
+* **Ceiling → Equal allowed**
+
+---
+
+## 3️⃣ Entry Variants (Key + Value)
+
+| Method            | What it Returns             | Rule  | Example Call           | Output |
+| ----------------- | --------------------------- | ----- | ---------------------- | ------ |
+| `lowerEntry(k)`   | Entry just less than `k`    | `< k` | `map.lowerEntry(23)`   | `21=B` |
+| `floorEntry(k)`   | Entry ≤ `k`                 | `≤ k` | `map.floorEntry(23)`   | `23=C` |
+| `higherEntry(k)`  | Entry just greater than `k` | `> k` | `map.higherEntry(23)`  | `25=D` |
+| `ceilingEntry(k)` | Entry ≥ `k`                 | `≥ k` | `map.ceilingEntry(24)` | `25=D` |
+
+📌 **Key vs Entry**
+
+* `Key` → returns only **key**
+* `Entry` → returns **key + value**
 
 ---
 
-### 4.5 Reverse Views
+## 4️⃣ Polling Entries (Remove + Return)
 
-```java
-map.descendingMap();
-map.descendingKeySet();
-```
+| Method             | Action                 | Removes? | Example Call           | Output  | Map After        |
+| ------------------ | ---------------------- | -------- | ---------------------- | ------- | ---------------- |
+| `pollFirstEntry()` | Returns smallest entry | ✅ Yes    | `map.pollFirstEntry()` | `1=A`   | `{21,23,25,141}` |
+| `pollLastEntry()`  | Returns largest entry  | ✅ Yes    | `map.pollLastEntry()`  | `141=E` | `{1,21,23,25}`   |
+
+📌 **Poll = Fetch + Delete**
 
 ---
+
+## 5️⃣ Reverse Map Methods
+
+| Method               | Description                       | Example Output                   |
+| -------------------- | --------------------------------- | -------------------------------- |
+| `descendingMap()`    | Returns map in **reverse order**  | `{141=E, 25=D, 23=C, 21=B, 1=A}` |
+| `descendingKeySet()` | Returns keys in **reverse order** | `[141, 25, 23, 21, 1]`           |
+
+📌 These are **views**, not new maps (changes reflect both ways).
+
+---
+
+
 
 ## 5. Comparison Summary
 
