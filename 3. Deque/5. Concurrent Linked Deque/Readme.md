@@ -222,22 +222,28 @@ class Main
     public static void main(String[] args)
     {
         ConcurrentLinkedDeque<Integer> d
-            = new ConcurrentLinkedDeque<>();
+                = new ConcurrentLinkedDeque<>();
 
         d.addFirst(10);
         d.addFirst(20);
         d.addFirst(30);
         d.addFirst(40);
-
+        
+        // Deque: [40, 30, 20, 10]
         System.out.println("Deque: " + d);
-
+        
+        //Last Element: 10
         System.out.println("Last Element: " + d.peekLast());
+        
+        //First Element: 40
         System.out.println("First Element: " + d.peekFirst());
 
         d.removeLast();
+        //After removing last: [40, 30, 20]
         System.out.println("After removing last: " + d);
 
         d.removeFirst();
+        //After removing first: [30, 20]
         System.out.println("After removing first: " + d);
     }
 }
