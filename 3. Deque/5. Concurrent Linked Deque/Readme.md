@@ -310,9 +310,8 @@ class Main
     
     public static void main(String[] args) 
     {
-
-        ConcurrentLinkedDeque<Integer> d
-        = new ConcurrentLinkedDeque<>();
+           ConcurrentLinkedDeque<Integer> d
+                = new ConcurrentLinkedDeque<>();
 
         d.add(40);
         d.add(50);
@@ -320,16 +319,22 @@ class Main
         d.add(70);
         d.add(80);
 
+        //Deque: [40, 50, 60, 70, 80]
         System.out.println("Deque: " + d);
 
+        //Removing first element: 40
         System.out.println("Removing first element: " + d.remove());
-        System.out.println("60 removed?: " + d.remove(60));
 
+        //60 removed?: true
+        System.out.println("60 removed?: " + d.remove(60));
+        
+        //Deque after removal: [50, 70, 80]
         System.out.println("Deque after removal: " + d);
 
         d.removeFirst();
         d.removeLast();
-
+        
+        //Deque after removing first and last: [70]
         System.out.println("Deque after removing first and last: " + d);
     }
 }
