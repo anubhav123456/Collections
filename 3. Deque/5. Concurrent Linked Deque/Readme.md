@@ -357,9 +357,8 @@ public class Main
 
     public static void main(String args[]) 
     {
-
         ConcurrentLinkedDeque<String> d
-        = new ConcurrentLinkedDeque<>();
+                = new ConcurrentLinkedDeque<>();
 
         d.add("Java");
         d.add("C++");
@@ -371,9 +370,13 @@ public class Main
         Iterator<String> i = d.iterator();
 
         System.out.println("Iterating over elements:");
-        while (i.hasNext()) {
-            System.out.println(i.next());
+
+        while (i.hasNext())
+        {
+            System.out.print(i.next() + " ");
         }
+        
+        // Java C++ Python Js 
     }
 }
 ```
@@ -391,7 +394,7 @@ public class Main
     {
 
         ConcurrentLinkedDeque<String> d
-        = new ConcurrentLinkedDeque<>();
+                = new ConcurrentLinkedDeque<>();
 
         d.add("Java");
         d.add("C++");
@@ -403,9 +406,12 @@ public class Main
         Iterator<String> i = d.descendingIterator();
 
         System.out.println("Iterating over elements:");
-        while (i.hasNext()) {
-            System.out.println(i.next());
+        while (i.hasNext())
+        {
+            System.out.print(i.next() + " ");
         }
+        
+        //Js Python C++ Java
     }
 }
 ```
@@ -429,17 +435,23 @@ class Main
     public static void main(String[] args)
     {
         ConcurrentLinkedDeque<String> d
-            = new ConcurrentLinkedDeque<>();
+                = new ConcurrentLinkedDeque<>();
 
         d.add("Java");
         d.add("C++");
         d.add("Python");
         d.add("Js");
-
+        
+        // Deque: [Java, C++, Python, Js]
         System.out.println("Deque: " + d);
-
+        
+        //First element: Java
         System.out.println("First element: " + d.getFirst());
+        
+        //Last element: Js
         System.out.println("Last element: " + d.getLast());
+        
+        //Head of deque: Java
         System.out.println("Head of deque: " + d.element());
     }
 }
