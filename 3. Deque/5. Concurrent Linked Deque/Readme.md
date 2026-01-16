@@ -184,10 +184,9 @@ class Main
 {
     public static void main(String[] args) 
     {
-        
         // Create a ConcurrentLinkedDeque
         ConcurrentLinkedDeque<Integer> d
-        = new ConcurrentLinkedDeque<>();
+                = new ConcurrentLinkedDeque<>();
 
         // Add elements to the front
         d.addFirst(10);
@@ -196,12 +195,14 @@ class Main
         d.addFirst(40);
 
         // Display the deque
+        //Deque: [40, 30, 20, 10]
         System.out.println("Deque: " + d);
 
         // Create another ConcurrentLinkedDeque by copying
         ConcurrentLinkedDeque<Integer> d1
-        = new ConcurrentLinkedDeque<>(d);
-
+                = new ConcurrentLinkedDeque<>(d);
+        
+        // Deque Copy: [40, 30, 20, 10]
         System.out.println("Deque Copy: " + d1);
     }
 }
