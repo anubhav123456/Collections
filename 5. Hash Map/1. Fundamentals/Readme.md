@@ -26,12 +26,6 @@ Example:
 
 ---
 
-Bhai, niche **clean Java Map (HashMap) notes** bana diye hain — **table + explained code + sample output**.
-DSA / interview / revision ke liye perfect ✨
-*(Note: `HashMap` me order guaranteed nahi hota, output order change ho sakta hai — maine **sample output** dikhaya hai.)*
-
----
-
 ## 📌 Java `Map` (HashMap) – Important Methods
 
 ### 🔹 Core Map Methods Summary
