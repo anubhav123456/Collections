@@ -248,13 +248,13 @@ for (Employee e : employees) {
 
 ## 12️⃣ Key Takeaways for Interviews
 
-✅ HashSet is backed by HashMap
-✅ Elements are stored as keys
-✅ Value is a dummy constant `PRESENT`
-✅ `add()` depends on `map.put()` return value
-✅ Duplicate → old value returned → not added
-✅ Iterator is fail-fast
-✅ Not thread-safe
+* ✅ HashSet is backed by HashMap
+* ✅ Elements are stored as keys
+* ✅ Value is a dummy constant `PRESENT`
+* ✅ `add()` depends on `map.put()` return value
+* ✅ Duplicate → old value returned → not added
+* ✅ Iterator is fail-fast
+* ✅ Not thread-safe
 
 ---
 
