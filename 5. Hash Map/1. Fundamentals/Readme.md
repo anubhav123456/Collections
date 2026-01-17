@@ -26,9 +26,7 @@ Example:
 
 ---
 
-## 📌 Java `Map` (HashMap) – Important Methods
-
-### 🔹 Core Map Methods Summary
+### 🔹 Core HashMap Methods Summary
 
 | Method                                  | Purpose           | What it Does                                                                        | Return Value             |
 | --------------------------------------- | ----------------- | ----------------------------------------------------------------------------------- | ------------------------ |
